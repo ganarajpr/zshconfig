@@ -83,6 +83,9 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 alias editzsh="vim ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias test="npm test"
+alias fix="npm run fix"
+alias start="npm start"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -93,3 +96,11 @@ ssh-add -K ~/.ssh/id_rsa
 function copy() {
    cat $1 | pbcopy
 }
+
+function changebranch() {
+   git stash; 
+   gco -;
+   git stash apply;
+   
+}
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
