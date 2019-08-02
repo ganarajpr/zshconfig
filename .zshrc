@@ -86,21 +86,30 @@ alias editzsh="vim ~/.zshrc"
 alias test="npm test"
 alias fix="npm run fix"
 alias start="npm start"
-
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 . ~/Projects/z/z.sh
 export PATH="/usr/local/opt/elasticsearch@2.4/bin:$PATH"
 ssh-add -K ~/.ssh/id_rsa
 
-function copy() {
-   cat $1 | pbcopy
-}
 
-function changebranch() {
-   git stash; 
-   gco -;
-   git stash apply;
-   
-}
+
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+export PATH="/usr/local/opt/elasticsearch@2.4/bin:$PATH"
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/ganaraj/Downloads/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/ganaraj/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/ganaraj/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/ganaraj/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
+
+
+nvm use 10
+
+# tabtab source for serverless package
+# uninstall by removing these lines or running `tabtab uninstall serverless`
+[[ -f /Users/ganaraj/.nvm/versions/node/v8.11.1/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh ]] && . /Users/ganaraj/.nvm/versions/node/v8.11.1/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh
+# tabtab source for sls package
+# uninstall by removing these lines or running `tabtab uninstall sls`
+[[ -f /Users/ganaraj/.nvm/versions/node/v8.11.1/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh ]] && . /Users/ganaraj/.nvm/versions/node/v8.11.1/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh
+export PATH="~/Library/Python/2.7/bin:$PATH"
